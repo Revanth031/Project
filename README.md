@@ -1,48 +1,120 @@
-# Clinical Data Warehouse - Final Project (Spring 2025)
+# Clinical Data Access and Analytics System
 
-This project is a clinical data management system built with Python and Tkinter. It allows authenticated users (admin, nurse, clinician, and management roles) to manage patient records, clinical notes, and view analytical statistics.
+## Overview
 
----
+This Python project simulates a secure, role-based hospital data management system that allows different user types to interact with patient records and clinical notes. It supports essential functionalities such as adding/removing patients, viewing patient records, counting visits, and generating statistical reports.
 
-## 🚀 Features
-
-- ✅ Role-based login system with credential verification
-- ✅ Add, remove, and retrieve patient records
-- ✅ Store and view clinical notes
-- ✅ Count visits by date
-- ✅ Generate and export statistics (histograms, pie charts)
-- ✅ Usage logging for all user actions
-- ✅ GUI built with Tkinter for a modern desktop experience
-- ✅ Clean data export in CSV format (`Patient_data.csv`, `Notes.csv`, `usage_log.csv`)
+This program was developed for **HI 741 Spring 2025 Programming Assignment 3**.
 
 ---
 
-## 🔐 Roles and Permissions
+## Features
 
-| Role       | Permissions                                         |
-|------------|-----------------------------------------------------|
-| `admin`    | Count visits only                                   |
-| `nurse`    | Add/remove/retrieve patients, view notes, count     |
-| `clinician`| Same as nurse                                       |
-| `management` | Generate statistics only                          |
-
----
-
-## 🧪 Sample Credentials (from Credentials.csv)
-
-| Username    | Password   | Role        |
-|-------------|------------|-------------|
-| admin1      | admin123   | admin       |
-| nurse1      | nurse123   | nurse       |
-| doctor1     | doc123     | clinician   |
-| manager1    | manage123  | management  |
+- **Role-Based Access Control (RBAC)** for four user roles: `admin`, `clinician`, `nurse`, `management`.
+- **Credential Authentication** from a CSV file.
+- **Patient Record Management**: Add, remove, retrieve patients.
+- **Clinical Notes Viewer** based on visit dates.
+- **Statistical Reports** for hospital management including:
+  - Age distribution
+  - Insurance types
+  - Gender, Race, and Ethnicity breakdowns
+- **Command-line Interface** for interactive use.
 
 ---
 
-🖥️ How to Run
-Terminal (Command Line)
+## Roles & Permissions
 
-python main.py -username YOUR_USERNAME -password YOUR_PASSWORD
+| Role        | Actions Allowed                                                                 |
+|-------------|----------------------------------------------------------------------------------|
+| admin       | `count_visits` on a specified date                                               |
+| clinician   | `add_patient`, `remove_patient`, `retrieve_patient`, `count_visits`, `view_note`|
+| nurse       | Same as `clinician`                                                              |
+| management  | Generates summary statistics only                                                |
 
-python user_interface.py
+---
 
+## Directory Structure
+
+```
+.
+├── Credentials.csv
+├── Notes.csv
+├── Patient_data.csv
+├── main.py
+├── user.py
+├── patient.py
+├── stats.py
+├── utils.py
+├── notebook_runner.py
+└── README.md
+```
+
+---
+
+## Usage
+
+### Run the Program
+
+```bash
+python main.py -username <USERNAME> -password <PASSWORD>
+```
+
+### Example
+
+```bash
+python main.py -username alice -password wonderland
+```
+
+---
+
+## File Descriptions
+
+| File              | Purpose                                                        |
+|-------------------|----------------------------------------------------------------|
+| `main.py`         | Main entry point. Parses arguments and routes by user role     |
+| `user.py`         | Handles user authentication and role assignment                |
+| `patient.py`      | Manages patient data operations                                |
+| `stats.py`        | Generates and saves patient statistics as images               |
+| `utils.py`        | Utilities for loading/saving data                              |
+| `notebook_runner.py` | Notebook-friendly runner (alternative to CLI)              |
+
+---
+
+## Data Files
+
+- `Credentials.csv`: Contains username, password, and role
+- `Patient_data.csv`: Contains patient demographics and visit records
+- `Notes.csv`: Contains clinical notes tied to visit IDs
+
+---
+
+## Output
+
+- For **management**, plots are saved as:
+  - `hist_age_distribution.png`
+  - `hist_insurance.png`
+  - `pie_gender_distribution.png`
+  - `hist_race.png`
+  - `hist_ethnicity.png`
+
+---
+
+## Requirements
+
+- Python 3.x
+- pandas
+- matplotlib
+
+Install dependencies:
+
+```bash
+pip install pandas matplotlib
+```
+
+---
+
+## Notes
+
+- Patient visit IDs are auto-generated.
+- Dates must be in `YYYY-MM-DD` format.
+- Changes to patient records are written back to `Patient_data.csv`.
