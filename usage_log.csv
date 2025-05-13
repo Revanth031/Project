@@ -1,0 +1,5 @@
+timestamp,username,role,action,status
+2025-05-12 20:27:45,W3PHXNA,nurse,login,success
+2025-05-12 20:28:04,W3PHXNA,nurse,add_patient,success
+2025-05-12 20:31:04,W3PHXNA,nurse,login,success
+2025-05-12 20:31:14,W3PHXNA,nurse,retrieve_patient,success
