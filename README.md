@@ -1,25 +1,48 @@
-# Clinical Data Warehouse - Final Project
+# Clinical Data Warehouse - Final Project (Spring 2025)
 
-This project is a clinical data management system built in Python using Tkinter for the graphical user interface. It supports multiple user roles and enables management of patient records and clinical notes along with basic statistics generation.
+This project is a clinical data management system built with Python and Tkinter. It allows authenticated users (admin, nurse, clinician, and management roles) to manage patient records, clinical notes, and view analytical statistics.
 
-## Features
+---
 
-- Role-based user login system
-- Add, retrieve, and remove patient records
-- View clinical notes by date
-- Count visits on a specific date
-- Generate visual statistics from patient data
-- Usage logging for audit trails
-- Clean and responsive Tkinter GUI
+## 🚀 Features
 
-## Roles and Permissions
+- ✅ Role-based login system with credential verification
+- ✅ Add, remove, and retrieve patient records
+- ✅ Store and view clinical notes
+- ✅ Count visits by date
+- ✅ Generate and export statistics (histograms, pie charts)
+- ✅ Usage logging for all user actions
+- ✅ GUI built with Tkinter for a modern desktop experience
+- ✅ Clean data export in CSV format (`Patient_data.csv`, `Notes.csv`, `usage_log.csv`)
 
-| Role        | Allowed Actions                                           |
-|-------------|-----------------------------------------------------------|
-| admin       | Count visits only                                         |
-| nurse       | Add, remove, retrieve patients; view notes; count visits |
-| clinician   | Same as nurse                                             |
-| management  | Generate statistics only                                  |
+---
 
-## Directory Structure
+## 🔐 Roles and Permissions
+
+| Role       | Permissions                                         |
+|------------|-----------------------------------------------------|
+| `admin`    | Count visits only                                   |
+| `nurse`    | Add/remove/retrieve patients, view notes, count     |
+| `clinician`| Same as nurse                                       |
+| `management` | Generate statistics only                          |
+
+---
+
+## 🧪 Sample Credentials (from Credentials.csv)
+
+| Username    | Password   | Role        |
+|-------------|------------|-------------|
+| admin1      | admin123   | admin       |
+| nurse1      | nurse123   | nurse       |
+| doctor1     | doc123     | clinician   |
+| manager1    | manage123  | management  |
+
+---
+
+🖥️ How to Run
+Terminal (Command Line)
+
+python main.py -username YOUR_USERNAME -password YOUR_PASSWORD
+
+python user_interface.py
 
