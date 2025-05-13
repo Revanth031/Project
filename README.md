@@ -1,17 +1,25 @@
-# Clinical Data Warehouse
+# Clinical Data Warehouse - Final Project
 
-This is a Python application that allows users to manage clinical patient data using a GUI built with Tkinter.
+This project is a clinical data management system built in Python using Tkinter for the graphical user interface. It supports multiple user roles and enables management of patient records and clinical notes along with basic statistics generation.
 
 ## Features
 
-- Login with username and password
-- Role-based access (admin, nurse, clinician, management)
-- Add, remove, and retrieve patient records
-- View clinical notes
-- Count visits by date
-- Generate basic statistics
+- Role-based user login system
+- Add, retrieve, and remove patient records
+- View clinical notes by date
+- Count visits on a specific date
+- Generate visual statistics from patient data
+- Usage logging for audit trails
+- Clean and responsive Tkinter GUI
 
-## How to Run
+## Roles and Permissions
 
-```bash
-python main.py -username YOUR_USERNAME -password YOUR_PASSWORD
+| Role        | Allowed Actions                                           |
+|-------------|-----------------------------------------------------------|
+| admin       | Count visits only                                         |
+| nurse       | Add, remove, retrieve patients; view notes; count visits |
+| clinician   | Same as nurse                                             |
+| management  | Generate statistics only                                  |
+
+## Directory Structure
+
