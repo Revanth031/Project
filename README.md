@@ -56,13 +56,7 @@ This program was developed for **HI 741 Spring 2025 Programming Assignment 3**.
 ### Run the Program
 
 ```bash
-python main.py -username <USERNAME> -password <PASSWORD>
-```
-
-### Example
-
-```bash
-python main.py -username alice -password wonderland
+python user_interface.py
 ```
 
 ---
